@@ -3,21 +3,22 @@
 ### Education
 **Bachelor in Economics** - University of A Coruña
 * Thesis: ["La transmisión de la política monetaria única en los países periféricos de la zona euro"](https://ruc.udc.es/dspace/handle/2183/18043)
-    
+
+
 [**Master in Data Science**](https://github.com/alexfrf/data-science-efbs) - EFBS Business School
 * Final Project: ["Clusterización y Métricas Avanzadas para
 Segmentación de Futbolistas y Modelos de Juego"](/pdf/AFR_TFM.pdf)
 
 #### Further Training
-**Applied Data Science in Python** - University of Michigan
-[**Applied Machine Learning in Python**](https://github.com/alexfrf/machine-learning-michigan) - University of Michigan
-[**Mathematical Modelling in Football**](https://github.com/alexfrf/soccermatics) - Soccermatics
-[**Data Analysis applied to Football**](https://github.com/alexfrf/curso-afecfa) - AFEC Football Academy
-[**Machine Learning in Python**](https://ruc.udc.es/dspace/handle/2183/18043) - IBM
-**SQL and Databases** - IBM
-**Webscraping and Data Extraction** - Udemy
-**PowerBI Full Training** - Udemy
-**Financial Politics** - International Monetary Fund
+* **Applied Data Science in Python** - University of Michigan
+* [**Applied Machine Learning in Python**](https://github.com/alexfrf/machine-learning-michigan) - University of Michigan
+* [**Mathematical Modelling in Football**](https://github.com/alexfrf/soccermatics) - Soccermatics
+* [**Data Analysis applied to Football**](https://github.com/alexfrf/curso-afecfa) - AFEC Football Academy
+* [**Machine Learning in Python**](https://ruc.udc.es/dspace/handle/2183/18043) - IBM
+* **SQL and Databases** - IBM
+* **Webscraping and Data Extraction** - Udemy
+* **PowerBI Full Training** - Udemy
+* **Financial Politics** - International Monetary Fund
 
 ---
 
