@@ -13,7 +13,7 @@ Constantly involved in a self-development and learning process through formation
 ---
 
 
-## Portfolio
+## Projects
 
 ### Category Name 1 
 
