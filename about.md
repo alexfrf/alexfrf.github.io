@@ -11,9 +11,9 @@ Segmentación de Futbolistas y Modelos de Juego"](/pdf/AFR_TFM.pdf)
 
 #### Further Training
 * **Applied Data Science in Python** - University of Michigan
-* **Applied Machine Learning in Python** - University of Michigan | [Repo](https://github.com/alexfrf/machine-learning-michigan)
-* **Mathematical Modelling in Football** - Soccermatics | [Repo](https://github.com/alexfrf/soccermatics)
-* **Data Analysis applied to Football** - AFEC Football Academy | [Repo](https://github.com/alexfrf/curso-afecfa)
+* **Applied Machine Learning in Python** - University of Michigan [Repo](https://github.com/alexfrf/machine-learning-michigan)
+* **Mathematical Modelling in Football** - Soccermatics [Repo](https://github.com/alexfrf/soccermatics)
+* **Data Analysis applied to Football** - AFEC Football Academy [Repo](https://github.com/alexfrf/curso-afecfa)
 * **Machine Learning in Python** - IBM
 * **SQL and Databases** - IBM
 * **Webscraping and Data Extraction** - Udemy
