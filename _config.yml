@@ -4,10 +4,11 @@ description: > # your text below (remove <br> elements if you don't need line br
   Data Analyst & BI Developer |
   Football & Macroeconomics
   <br><br>
-  In this space, you can find some insights regarding some of my projects, as well as some data-driven written analytical pieces.
+  In this space, you can find some insights regarding my projects, as well as some written analytical pieces.
   <br><br>
   <a href="https://www.linkedin.com/in/alejandro-fernandez-rodriguez/">Linkedin</a> |
-  <a href="https://twitter.com/DonAlexfr">Twitter</a> | <a href="https://www.vavel.com/es/author/alex-fernandez-rodriguez/">Blog</a>
+  <a href="https://twitter.com/DonAlexfr">Twitter</a> | 
+  <a href="https://www.vavel.com/es/author/alex-fernandez-rodriguez/">Blog</a>
   
 theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
