@@ -494,6 +494,10 @@ k.head(25)
 |         P. Zielinski |         5.232612 |       0 |
 
 
+As stated in the table above, West Ham United playmaker Manuel Lanzini is the player who, sharing the same cluster, shows more similarity to Denis Suárez, while Sevilla midfielder Oliver Torres gets the closest score in overall terms.
+
+<img src="lanzini.jpg?raw=true"/>
+
 This summer Celta has assumed the signing -in the form of a transfer, for the moment- of Óscar Rodríguez. He is a decisive footballer from midfield -particularly due to his excellent ball striking-, but he has never excelled in organizational tasks. This fact becomes even more relevant in the case of Celta, since the Coudet system encourages the footballer who occupies the central position in the trident that is behind the pair of forwards to be the one who practically assumes alone the elaboration of the game. stroke. Without being the same position and acting more advanced, he remembers, when Celta attacks in position and is installed in the rival field, the role of Jorginho at Chelsea.
 
 Eduardo Coudet has opted for Óscar in the first games of the season in the position previously occupied by Denis, preferring the ex-madridista over youth player Gabri Veiga or American Luca de la Torre. We will see below the similarity between Denis Suárez's game last season and that of the player from Talavera, in order to be able to assess Óscar's suitability for this particular role.
