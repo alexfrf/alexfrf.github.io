@@ -15,12 +15,12 @@ Constantly involved in a self-development and learning process through formation
 
 ## Projects
 
-[**Celta de Vigo 2022 - The Playmaker Dilemma. A Data-Driven Approach**](/sample_page.md)
+[**Celta de Vigo 2022 - The Playmaker Dilemma. A Data-Driven Approach**](/projects/celta/project.md)
 
 <img src="images/celta.jpg?raw=true"/>
 
 We will carry out the task of looking for a profile that could fit into the role of organizer that Denis Suarez, out of the club plans due to disagreements with the board, has been assuming in recent years, mainly since the arrival of Argentine Eduardo Coudet on the bench. The goal of this project will be, then, to obtain a shortlist of similar players to Denis Suárez, employing techniques such as clustering and having in account the concept of euclidean distance.
-[**Read More**](/sample_page.md)
+[**Read More**](/projects/celta/project.md)
 
 
 ---
