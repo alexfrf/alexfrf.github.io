@@ -1,6 +1,17 @@
-## Portfolio
+## About Me
+
+Economist oriented toward the modelling and deployment of BI/Data Science processes that would lead to the implementation of data-driven operations within an organization.
+
+Ability to use high-level scripting language (Python) and data query language (SQL or similar) on a daily basis. I seek to obtain answers and identify key trends by analyzing data and building econometric and machine learning models. Likewise, I apply these skills in the improvement of internal processes in my current job. 
+
+Constantly involved in a self-development and learning process through formation and consistency.
+
+[See More](/sample_page)
 
 ---
+
+
+## Portfolio
 
 ### Category Name 1 
 
