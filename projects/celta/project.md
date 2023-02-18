@@ -1,6 +1,6 @@
 ## Celta de Vigo 2022 - The Playmaker Dilemma. A Data-Driven Approach
 
-<img src="images/celta.jpg?raw=true"/>
+<img src="celta.jpg?raw=true"/>
 
 We will establish that we work as data analysts in the recruitment area of Celta de Vigo.
 
