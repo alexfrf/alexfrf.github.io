@@ -1,3 +1,5 @@
+# My Portfolio
+
 ## About Me
 
 Economist oriented toward the modelling and deployment of BI/Data Science processes that would lead to the implementation of data-driven operations within an organization.
@@ -6,7 +8,7 @@ Ability to use high-level scripting language (Python) and data query language (S
 
 Constantly involved in a self-development and learning process through formation and consistency.
 
-[See More](/about) | [My CV](/pdf/cv.pdf)
+[Read More](/about) | [My CV](/pdf/cv.pdf)
 
 ---
 
