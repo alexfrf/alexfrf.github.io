@@ -33,7 +33,7 @@ We will carry out the task of looking for a profile that could fit into the role
 
 ---
 
-### Category Name 2
+## Highlighted Repos
 
 - [Project 1 Title](http://example.com/)
 - [Project 2 Title](http://example.com/)
