@@ -6,7 +6,7 @@ Ability to use high-level scripting language (Python) and data query language (S
 
 Constantly involved in a self-development and learning process through formation and consistency.
 
-[See More](/sample_page)
+[See More](/about) | [My CV](/pdf/cv.pdf)
 
 ---
 
