@@ -22,24 +22,15 @@ Constantly involved in a self-development and learning process through formation
 We will carry out the task of looking for a profile that could fit into the role of organizer that Denis Suarez, out of the club plans due to disagreements with the board, has been assuming in recent years, mainly since the arrival of Argentine Eduardo Coudet on the bench. The goal of this project will be, then, to obtain a shortlist of similar players to Denis Suárez, employing techniques such as clustering and having in account the concept of euclidean distance.
 [**Read More**](/projects/celta/project.md)
 
-
----
-[**Project 2 Title**](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
----
-[**Project 3 Title**](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
 ---
 
 ## Highlighted Repos
 
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+- [AFECFA - Football Analytics Course](https://github.com/alexfrf/curso-afecfa)
+- [Econometrics with Python](https://github.com/alexfrf/econometrics-with-python)
+- [Soccermatics Projects](https://github.com/alexfrf/soccermatics)
+- [Machine Learning Projects - University Of Michigan](https://github.com/alexfrf/machine-learning-michigan)
+- [Workflows Integrated on Cloud](https://github.com/alexfrf/cloud-workflows)
 
 ---
 
