@@ -15,7 +15,7 @@ Constantly involved in a self-development and learning process through formation
 
 ## Projects
 
-[**Celta de Vigo 2022 - The Playmaker Dilemma | A Data-Driven Approach**](/projects/celta_ps)
+[**Celta de Vigo 2022 - The Playmaker Dilemma | A Data-Driven Approach**](/sample_page.md)
 
 The Galician team was, at the time the 2021-22 season came to an end, in the process of finding a way out for the player who had the playmaker role of the team in recent years, Denis Suárez, mainly due to disagreements with the board.
 
