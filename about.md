@@ -2,9 +2,10 @@
 
 ### Education
 **Bachelor in Economics** - University of A Coruña
-    Thesis: ["La transmisión de la política monetaria única en los países periféricos de la zona euro"](https://ruc.udc.es/dspace/handle/2183/18043)
+* Thesis: ["La transmisión de la política monetaria única en los países periféricos de la zona euro"](https://ruc.udc.es/dspace/handle/2183/18043)
+    
 [**Master in Data Science**](https://github.com/alexfrf/data-science-efbs) - EFBS Business School
-    Final Project: ["Clusterización y Métricas Avanzadas para
+* Final Project: ["Clusterización y Métricas Avanzadas para
 Segmentación de Futbolistas y Modelos de Juego"](/pdf/AFR_TFM.pdf)
 
 #### Further Training
