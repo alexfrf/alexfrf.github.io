@@ -15,7 +15,7 @@ Constantly involved in a self-development and learning process through formation
 
 ## Projects
 
-[**Celta de Vigo 2022 - The Playmaker Dilemma | A Data-Driven Approach**](/sample_page.md)
+[**Celta de Vigo 2022 - The Playmaker Dilemma | A Data-Driven Approach**](/sample_page)
 
 <img src="images/celta.jpg?raw=true"/>
 
