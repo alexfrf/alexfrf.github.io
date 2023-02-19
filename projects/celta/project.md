@@ -34,7 +34,7 @@ from yellowbrick.cluster.elbow import kelbow_visualizer
 ```
 
 
-Given that we will carry out the analysis with a clear practical vocation, we will try, first of all, to clarify and explain the role on which we will work and its context.
+In order to contextualize the analysis that is to be conducted, we will try, first of all, to clarify and explain the role on which we will work and its context.
 
 
 ```python
@@ -403,7 +403,7 @@ def player_similarities(player):
     plt.show()
     
     y = df_pca[df_pca.index==player]
-    print('Cluster de {}: {}'.format(player,y['cluster'].values[0]))
+    print('Cluster of {}: {}'.format(player,y['cluster'].values[0]))
     euc = []
     for i in df_pca.values:
         euc.append(distance.euclidean(y.values,i))
@@ -453,16 +453,16 @@ k= player_similarities(jug)
     
 
 
-    Cluster de Denis Suarez: 1
+    Cluster of Denis Suarez: 1
     
 
 
 ```python
-print('Top25 jugadores similares a {}'.format(jug))
+print('Top25 similar players to {}'.format(jug))
 k.head(25)
 ```
 
-**Top25 jugadores similares a Denis Suarez**
+**Top25 similar players to Denis Suarez**
 
 |              Jugador | Similarity_Score | Cluster |
 |---------------------:|-----------------:|---------|
@@ -529,7 +529,7 @@ k= player_similarities(jug)
     
 
 
-    Cluster de Oscar Rodriguez: 2
+    Cluster of Oscar Rodriguez: 2
     
 
 
