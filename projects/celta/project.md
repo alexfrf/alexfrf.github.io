@@ -464,7 +464,7 @@ k.head(25)
 
 **Top25 similar players to Denis Suarez**
 
-|              Jugador | Similarity_Score | Cluster |
+|               Player | Similarity_Score | Cluster |
 |---------------------:|-----------------:|---------|
 |        Oliver Torres |         3.934338 |       0 |
 |       Manuel Lanzini |         3.955426 |       1 |
@@ -533,7 +533,7 @@ k= player_similarities(jug)
     
 
 
-**Top25 Jugadores similares a Oscar Rodriguez**
+**Top25 Similar Players to Oscar Rodriguez**
 
 | Player               | Similarity_Score | Cluster |
 |----------------------|------------------|---------|
