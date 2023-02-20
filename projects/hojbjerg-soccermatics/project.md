@@ -292,25 +292,7 @@ sns.despine()
 ![png](output_18_0.png)
     
 
-
-
-```python
-gr = def_actions.groupby('player_name').x.count()
-gr = gr/no_games
-gr = gr.sort_values(ascending=False)
-
-plt.figure(figsize=(5,6))
-gr.plot.barh(color='red')
-plt.xlabel('Defensive Actions per Game',size=12,weight='bold')
-sns.despine()
-```
-
-
     
-![png](output_19_0.png)
-    
-
-
 The diagrams coming next show us the volume of passes carried out by Hojbjerg during the whole tournament. It is worth to highlight the width disposition of the Danish player’s interventions. Hojbjerg does not only appear in the central part of the pitch, as a classic deep lying midfielder of a possession-based team, he also goes wide to get the ball and spread the opposing midfield. As a result, he covers a large area also in buildup, allowing fullbacks to stay forward and helping the talented Damsgaard to have a less crowded opposition in the middle, what would favour more and better situations of chances created by a through-ball or a wise carry by the Brentford playmaker. 
 
 
@@ -463,6 +445,7 @@ plt.show();
 As we mentioned before, Hojbjerg role during the tournament was far away from being strictly positional. We can prove it looking at his defensive actions too -chart below-. The Spurs’ player played, in general, an intensive role in the middle, and registered a huge activity on the right side of the pitch, where he had to cover the area that Stryger Larsen used to leave unprotected with his forward runs. It is easy to think, thus, that Kasper Hjulmand prioritised a well organised back- three, having to ask Hojbjerg to cover this area, instead of keeping the midfielder in a more central position and asking Christensen, who was usually the right centre-back, to go forward to anticipate and cover Stryger Larsen’s position,  but risking, at the same time, to create a huge space backwards and, therefore, another vulnerable spot in a more threatening position. 
 
 
+
 ```python
 def_actions = pd.DataFrame()
 rival_pass = pd.DataFrame()
@@ -479,6 +462,20 @@ for i in matches:
     def_actions = pd.concat([def_actions,defa])
     rival_pass = pd.concat([rival_pass,rp])
 ```
+
+```python
+gr = def_actions.groupby('player_name').x.count()
+gr = gr/no_games
+gr = gr.sort_values(ascending=False)
+
+plt.figure(figsize=(5,6))
+gr.plot.barh(color='red')
+plt.xlabel('Defensive Actions per Game',size=12,weight='bold')
+sns.despine()
+```
+
+    
+![png](output_19_0.png)
 
 
 ```python
