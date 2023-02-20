@@ -460,7 +460,7 @@ plt.show();
     
 
 
-As we mentioned before, Hojbjerg role during the tournament was far away from being strictly positional. We can prove it looking at his defensive actions too -chart above-. The Spurs’ player played, in general, an intensive role in the middle, and registered a huge activity on the right side of the pitch, where he had to cover the area that Stryger Larsen used to leave unprotected with his forward runs. It is easy to think, thus, that Kasper Hjulmand prioritised a well organised back- three, having to ask Hojbjerg to cover this area, instead of keeping the midfielder in a more central position and asking Christensen, who was usually the right centre-back, to go forward to anticipate and cover Stryger Larsen’s position,  but risking, at the same time, to create a huge space backwards and, therefore, another vulnerable spot in a more threatening position. 
+As we mentioned before, Hojbjerg role during the tournament was far away from being strictly positional. We can prove it looking at his defensive actions too -chart below-. The Spurs’ player played, in general, an intensive role in the middle, and registered a huge activity on the right side of the pitch, where he had to cover the area that Stryger Larsen used to leave unprotected with his forward runs. It is easy to think, thus, that Kasper Hjulmand prioritised a well organised back- three, having to ask Hojbjerg to cover this area, instead of keeping the midfielder in a more central position and asking Christensen, who was usually the right centre-back, to go forward to anticipate and cover Stryger Larsen’s position,  but risking, at the same time, to create a huge space backwards and, therefore, another vulnerable spot in a more threatening position. 
 
 
 ```python
