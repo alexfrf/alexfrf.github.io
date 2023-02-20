@@ -24,12 +24,12 @@ We will carry out the task of looking for a profile that could fit into the role
 
 ---
 
-[**Pierre-Emile Højbjerg at Euro 2020 – Performance Analysis based on Data**](/projects/hojbjerg-soccermatics/Pierre-Emile Hojbjerg Analysis.md)
+[**Pierre-Emile Højbjerg at Euro 2020 – Performance Analysis based on Data**](/projects/hojbjerg-soccermatics/project.md)
 
 <img src="images/ph.jpg?raw=true"/>
 
 Pierre-Emile Hojbjerg emerged as a leader of the Danish National team throughout their brilliant run at the Euro 2020, where the Scandinavian squad was able to reach the semifinals and even to force England to defeat them in the extra time for a spot in the Final.
-[**Read More**](/projects/hojbjerg-soccermatics/Pierre-Emile Hojbjerg Analysis.md)
+[**Read More**](/projects/hojbjerg-soccermatics/project.md)
 
 ---
 
