@@ -2,7 +2,7 @@
 
 *This paper served as an assignment that was part of the practical content of the excellent [Soccermatics](https://soccermatics.readthedocs.io/en/latest/index.html) course, created by David Sumpter.*
 
-[](ph.jpg)
+[ph](ph.jpg)
 
 Pierre-Emile Hojbjerg emerged as a leader of the Danish National team throughout their brilliant run at the Euro 2020, where the Scandinavian squad was able to reach the semifinals and even to force England to defeat them in the extra time for a spot in the Final.
 
