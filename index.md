@@ -15,6 +15,15 @@ Constantly involved in a self-development and learning process through formation
 
 ## Projects
 
+[**Segmentation & Profiling of Football Players through Clustering, Advanced Metrics and Analysis of Game Model**](/projects/streamlit-scouting/project.md)
+
+<img src="images/streamlit.png?raw=true"/>
+
+The purpose of this text is to describe the project for the planning, development, conceptualization and subsequent deployment of a web application that visualizes a model that seeks to segment the characteristics of the players in the most important world football competitions according to advanced metrics and, segmenting the game model of the teams, being able to associate, to each club, the footballers who, for each position on the field, best fit into their system. The purpose is to add the variant of the team's style of play -their own and the others-, measuring and quantifying it to be able to find those players that are closest, based on advanced metrics, to the numbers of the team that we are analyzing. Those footballers will be the ones that, potentially, best suit the needs for which said team goes to the market, since they will be pieces that will require a shorter adaptation process and will know similar game mechanisms, since they will come from sets that, tactically, show similarities.
+[**Read More**](/projects/streamlit-scouting/project.md)
+
+---
+
 [**Celta de Vigo 2022 - The Playmaker Dilemma. A Data-Driven Approach**](/projects/celta/project.md)
 
 <img src="images/celta.jpg?raw=true"/>
