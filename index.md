@@ -14,7 +14,7 @@ Constantly involved in a self-development and learning process through formation
 
 ## Projects
 
-[**Building an Analytic Scouting Model based on Algorithms and Advanced Metrics**](/projects/streamlit-scouting/project.md)
+[**Building an Analytical Scouting Model based on Algorithms and Advanced Metrics**](/projects/streamlit-scouting/project.md)
 
 <img src="images/streamlitk.PNG?raw=true"/>
 
