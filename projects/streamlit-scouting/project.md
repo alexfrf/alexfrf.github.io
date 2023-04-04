@@ -6,8 +6,10 @@
 - [GO TO GITHUB REPO](https://github.com/alexfrf/scouting-profiler)
 
 
-The purpose of this project is to create a model that, being deployed on an app, would carry out the segmentation of the players in the most important world football competitions according to advanced metrics and, taking in account the game model of the teams, link to each club the kind of player who, given the position on the field, best fit into their game model. The value lays on adding up the team's style of play -their own and the others- as a key factor, measuring and quantifying it to be able to identify those players that are closest, based on advanced metrics, to the numbers of the team that we are analyzing. Those footballers will be the ones that, potentially, best suit the needs for which said team goes to the market, since they will be pieces that will require a shorter adaptation process and will know similar game mechanisms, since they will come from sets that, tactically, show similarities.
+**Disclaimer 1: Both data and the app itself are written in Spanish**
+**Disclaimer 2: This model, including the app build-up, is entirely written in Python. You can check out the code line by line on the [Github Repo](https://github.com/alexfrf/scouting-profiler)**
 
+The purpose of this project is to develop a model that, when deployed on an app, will segment players in the world's most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team's style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed. These footballers will potentially be the best fit for the needs of the team going to the market, as they will require a shorter adaptation process and will know similar game mechanisms, since they come from teams that show tactical similarities.
 ![png](/Documentacion/streamlit.png)
 
 #### Data Sources
@@ -15,7 +17,7 @@ The purpose of this project is to create a model that, being deployed on an app,
 - [InStat](https://www.hudl.com/products/instat)
 - [Transfermarkt](https://www.transfermarkt.com/)
 
-The purpose of this notebook is to describe the procedures carried out, at a technical level, from the extraction of the necessary data to the deployment in the Streamlit cloud of the application that can currently be viewed, detailing the scripts and functions used in each passed. This explanation is structured as follows:
+In the following lines, we will explain the technical procedures that were carried out, from the extraction of the necessary data to the deployment of the application in the Streamlit cloud. We will also detail the scripts and functions used in each step. The structure of this explanation is as follows:
 
 - **SOURCE DATA: Content and Treatment (Extraction, Import and Transformation)**
      - Instant Data
@@ -47,7 +49,7 @@ The purpose of this notebook is to describe the procedures carried out, at a tec
 
 ### Source Data | Extraction, Import and Transformation
 
-The data comes from two sources -Instat and Transfermarkt-, whose export from its origin presents differences. The Instat data has been downloaded, in excel format, from the provider's website. For each league we found two files, one corresponding to players and the other to teams. We have this information for the first divisions of 24 countries and the second divisions of the five major leagues -Spain, England, France, Italy and Germany-.
+The data used in this project comes from two sources: Instat and Transfermarkt. The export from each source presents differences. The Instat data was downloaded in Excel format from the provider's website. For each league, we found two files, one for players and another for teams. We have this information for the first divisions of 24 countries and the second divisions of the five major leagues: Spain, England, France, Italy, and Germany.
 
 | Código | País | Liga |
 |---|---|---|
@@ -81,11 +83,11 @@ The data comes from two sources -Instat and Transfermarkt-, whose export from it
 | TS1 | CzechRepublic | FortunaLeague |
 | UNG1 | Hungary | NBI |
 
-For its part, the transfermarkt data referring to the report is scraped directly from the web using the Requests and BeautifulSoup libraries, using the code included in the *Tmarkt_scraper.py* script. This task results in the creation of three files:
+On the other hand, the transfermarkt data referring to the report is scraped directly from the web using the Requests and BeautifulSoup libraries, using the code included in the *Tmarkt_scraper.py* script. This task results in the creation of three files:
 
 - **tmarkt**: made up by the basic information of the players that are part of the competitions listed above.
 - **leagues**: metadata of teams and leagues
-- **equipos_sistemas**: stands for detailed information on match plans, collected in Transfermarkt [here](https://www.transfermarkt.com/Real%20Betis%20Sevilla/spielplan/verein/150/saison_id/2021/plus/1#ES1). Se recoge el entrenador que ha dirigido al equipo en cada encuentro y el sistema de juego. Sobre esa informacións se calculan una serie de métricas relacionadas con el tiempo absoluto y relativo de empleo de cada estructura.
+- **equipos_sistemas**: stands for detailed information on match plans, collected in Transfermarkt [here](https://www.transfermarkt.com/Real%20Betis%20Sevilla/spielplan/verein/150/saison_id/2021/plus/1#ES1). The coach who directed the team in each match and the playing system are collected. Based on this information, a series of metrics related to the absolute and relative time of use of each structure are calculated.
 
 Based on this information, the *data_cleaning.py* script imports the files and, after concatenating the Instat team and player data by competition, performs the following operations:
 
