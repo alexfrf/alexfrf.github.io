@@ -12,7 +12,8 @@ The purpose of this text is to describe the project for the planning, developmen
 
 #### Data Sources
 
-*InStat* | *Transfermarkt*
+- [InStat](https://www.hudl.com/products/instat)
+- [Transfermarkt](https://www.transfermarkt.com/)
 
 The purpose of this notebook is to describe the procedures carried out, at a technical level, from the extraction of the necessary data to the deployment in the Streamlit cloud of the application that can currently be viewed, detailing the scripts and functions used in each passed. This explanation is structured as follows:
 
