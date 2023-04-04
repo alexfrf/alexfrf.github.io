@@ -6,8 +6,8 @@
 - [GO TO GITHUB REPO](https://github.com/alexfrf/scouting-profiler)
 
 
-**Disclaimer 1: Both data and the app itself are written in Spanish**
-**Disclaimer 2: This model, including the app build-up, is entirely written in Python. You can check out the code line by line on the [Github Repo](https://github.com/alexfrf/scouting-profiler)**
+- **Disclaimer 1: Both data and the app itself are written in Spanish**
+- **Disclaimer 2: This model, including the app build-up, is entirely written in Python. You can check out the code line by line on the [Github Repo](https://github.com/alexfrf/scouting-profiler)**
 
 The purpose of this project is to develop a model that, when deployed on an app, will segment players in the world's most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team's style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed. These footballers will potentially be the best fit for the needs of the team going to the market, as they will require a shorter adaptation process and will know similar game mechanisms, since they come from teams that show tactical similarities.
 ![png](/Documentacion/streamlit.png)
@@ -507,10 +507,8 @@ The app is divided into five very different sections:
 - **Title and Introduction**: it is located in the header and tries to explain the motivation of the application and its operation, detailing the origin of the data.
 
 
-
 - **Model Return**: shows the X players best suited to the selected position and team, in a table detailing the player's club, age, country, market value, Instat index, degree of similarity with the game model and cluster (group) to which the player is assigned. On the right, it shows the most determining variables when establishing clustering and the distances between players.
 
-![png](/Model/Players/streamlit.PNG)
 
 - **Dashboard**: it is located in the part that, vertically, we could call "central" in the application. This section contains the key information of the selected player, either one of those listed in the returns table or any other that we want to consult and compare. Four views are available:
     - Simple radar of the selected player (upper widget, by default it is the 1st of the returns table). Compare the player (purple) with the average number of players in his position in his league (red) and the maximum for each variable (light grey).
@@ -518,10 +516,5 @@ The app is divided into five very different sections:
     - Below is a comparative radar that, by default, measures the selected player with the footballer who occupies the chosen position in the club that we have chosen in the filter section. Likewise, any comparison can be made using the widgets that appear just above the radar.
     - The fourth quadrant shows the most similar players -without taking into account the game model of the teams- to the football player selected in the first widget-. We can also see the cluster of each of them and their degree of similarity.
 
-![png](/Model/Players/radar1.PNG)
-
-![png](/Model/Players/radar2.png)
 
 - **Explanation of Clusters**: this last section explains the segmentation carried out by the model, both for team game models (left), differentiating by game phase, and for players (right), showing the division for position selected. For each group, both in players and in teams, explain the basic characteristics of each cluster, adding, in tables, the members of each group (use widgets). In addition, in the case of teams, a KPI is shown with the average number of expected points for each cluster.
-
-![png](/Model/Players/dash_clusters.PNG)
