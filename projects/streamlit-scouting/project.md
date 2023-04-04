@@ -1,4 +1,4 @@
-# Building an Analytical Scouting Model based on Algorithms and Advanced Metrics
+## Building an Analytical Scouting Model based on Algorithms and Advanced Metrics
 
 ![png](/Documentacion/streamlitk.PNG)
 
