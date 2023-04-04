@@ -2,8 +2,8 @@
 
 ![png](/Documentacion/streamlitk.PNG)
 
-- [Streamlit App](https://alexfrf-mlscoutingprofiler.streamlit.app/)
-- [GitHub Repo](https://github.com/alexfrf/scouting-profiler)
+- [GO TO THE STREAMLIT APP](https://alexfrf-mlscoutingprofiler.streamlit.app/)
+- [GO TO GITHUB REPO](https://github.com/alexfrf/scouting-profiler)
 
 
 The purpose of this project is to create a model that, being deployed on an app, would carry out the segmentation of the players in the most important world football competitions according to advanced metrics and, taking in account the game model of the teams, link to each club the kind of player who, given the position on the field, best fit into their game model. The value lays on adding up the team's style of play -their own and the others- as a key factor, measuring and quantifying it to be able to identify those players that are closest, based on advanced metrics, to the numbers of the team that we are analyzing. Those footballers will be the ones that, potentially, best suit the needs for which said team goes to the market, since they will be pieces that will require a shorter adaptation process and will know similar game mechanisms, since they will come from sets that, tactically, show similarities.
