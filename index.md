@@ -18,7 +18,7 @@ Constantly involved in a self-development and learning process through formation
 
 <img src="images/streamlitk.PNG?raw=true"/>
 
-The purpose of this project is to create a model that, being deployed on an app, would carry out the segmentation of the players in the most important world football competitions according to advanced metrics and, taking in account the game model of the teams, link to each club the kind of player who, given the position on the field, best fit into their game model. The value lays on adding up the team's style of play -their own and the others- as a key factor, measuring and quantifying it to be able to identify those players that are closest, based on advanced metrics, to the numbers of the team that we are analyzing.
+The purpose of this project is to develop a model that, when deployed on an app, will segment players in the world’s most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team’s style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed.
 [**Read More**](/projects/streamlit-scouting/project.md)
 
 ---
