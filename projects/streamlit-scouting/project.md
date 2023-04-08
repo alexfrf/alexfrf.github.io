@@ -155,11 +155,11 @@ With this, we will obtain the clustering of the game models based on these categ
 
 This chapter deals with the structure proposed on the field of play, referring to the system used and the number of players occupying each line, expressed as the percentage of time over the total minutes played. Next we check the weight of each variable in the model. The following stand out:
 
-    - % of time spent forming with defense of four men
-    - % of time spent training with double pivot
-    - % of time spent forming with defense of four men
-    - % of time spent forming with just one striker
-    - % of time spent forming with three forwards
+- % of time spent playing with defense of four men
+- % of time spent playing with double pivot
+- % of time spent playing with defense of four men
+- % of time spent playing with just one striker
+- % of time spent playing with three forwards
 
 The PCA algorithm selects the first six of the present image.
 
@@ -187,12 +187,12 @@ The PCA algorithm selects the first six of the present image.
 
 This chapter addresses the team's defensive proposal, covering variables that try to explain defensive intensity, heights and the time dedicated to being reactive.
 
-    - Pressures for every 100 defensive actions
-    - Recoveries in rival field
-    - pressures
-    - % of the recoveries that are made in the rival field
-    - % of effective pressures
-    - Rival passes by defensive action (PPDA)
+- Pressures for every 100 defensive actions
+- Recoveries in rival field
+- pressures
+- % of the recoveries that are made in the opposing field
+- % of effective pressures
+- Opposing passes by defensive action (PPDA)
     
 The PCA function selects the first nine variables from this image.
 
@@ -220,11 +220,11 @@ The PCA function selects the first nine variables from this image.
 
 This chapter deals with the team's proposal with the ball, showing variables that try to illustrate the way in which the team proceeds with the ball out and settles and/or progresses in the rival field.
 
-    - Incursions into rival field for every 100 passes
-    - Pace - time (seconds) with the ball for each tackle in the final third
-    - Buildup situations per 100 possessions
-    - Time with the ball (in seconds)
-    - Incursions to final third
+- Incursions into rival field for every 100 passes
+- Pace - time (seconds) with the ball for each incursion in the final third
+- Buildup situations per 100 possessions
+- Time with the ball (in seconds)
+- Incursions to final third
     
 The PCA function selects the first seven variables from this image.
 
@@ -252,11 +252,11 @@ The PCA function selects the first seven variables from this image.
 
 This chapter looks at the way the team proceeds in the final third of the field, its clear-sightedness in generating opportunities and the value produced in the area.
 
-    - Goal plays for every 100 incursions into the rival field
-    - Chances created (shot or key pass) every 100 raids in the last third
-    - Expected goals per 100 actions
-    - Key passes per 100 passes
-    - Raids in rival area
+- Goal plays for every 100 incursions into the rival field
+- Chances created (shot or key pass) every 100 incursions in the last third
+- Expected goals per 100 actions
+- Key passes per 100 passes
+- Entries in rival area
     
 The PCA function selects the first eight variables from this image.
 
@@ -471,14 +471,9 @@ If, in addition, said need that makes the club go to the transfer market is moti
 
 If the incorporation that is intended to be carried out really satisfies a role that did not exist until today in the template, it would not make so much sense to use the **player_similarities** function, while **team_mapping**, used correctly, would continue to offer some relevant information.
 
-### La Herramienta de Visualización
+### The App Explained
 
-Comenzamos el último apéndice del proyecto analizando el script que genera los distintos elementos disponibles en la aplicación.
-
-#### Codificación de la aplicación
-
-La ejecución y deployment del las funciones de distancia del modelo y de todos los elementos que forman parte del front de la página se realiza en el script *streamlit_imp.py*. Sin embargo, los plots de barras y radar de matplotlib y seaborn que se pueden distinguir en la app están formulados en el script *players_plotting.py*.
-
+We begin the last appendix of the project by analyzing the script that generates the different elements available in the application.
 
 #### Application coding
 
@@ -498,7 +493,7 @@ The app is divided into five very different sections:
 
    - Market value (transfermarkt) limit
    - Age limit
-   - Good Leg
+   - Strong Foot
    - INSTAT Quality Index
    - Competitions: allows you to choose or omit championships in the model. This will return players from the chosen leagues
    - Teams: Allows you to choose or omit teams in the model. This will return players from the chosen clubs
