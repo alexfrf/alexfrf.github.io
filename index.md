@@ -16,7 +16,7 @@ Constantly involved in a self-development and learning process through formation
 
 [**Building an Analytical Scouting Model based on Algorithms and Advanced Metrics**](/projects/streamlit-scouting/project.md)
 
-<img src="images/streamlitk.PNG?raw=true"/>
+<img src="images/streamlit.jpg?raw=true"/>
 
 The purpose of this project is to develop a model that, when deployed on an app, will segment players in the world’s most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team’s style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed.
 [**Read More**](/projects/streamlit-scouting/project.md)

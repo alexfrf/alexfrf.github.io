@@ -1,6 +1,6 @@
 ## Building an Analytical Scouting Model based on Algorithms and Advanced Metrics
 
-![png](/Documentacion/streamlitk.PNG)
+![png](/Documentacion/streamlit.jpg)
 
 - [GO TO THE STREAMLIT APP](https://alexfrf-mlscoutingprofiler.streamlit.app/)
 - [GO TO GITHUB REPO](https://github.com/alexfrf/scouting-profiler)
