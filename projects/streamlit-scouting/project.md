@@ -4,6 +4,7 @@
 
 - [GO TO THE STREAMLIT APP](https://alexfrf-mlscoutingprofiler.streamlit.app/)
 - [GO TO GITHUB REPO](https://github.com/alexfrf/scouting-profiler)
+- [GO TO THE VIDEO PRESENTATION ON YOUTUBE](https://www.youtube.com/watch?v=UlVIGp-x7VM&t=1700s)
 
 
 - **Disclaimer 1: Both data and the app itself are written in Spanish**
