@@ -2,516 +2,158 @@
 
 ![png](/Documentacion/streamlit.jpg)
 
-- [GO TO THE STREAMLIT APP](https://alexfrf-mlscoutingprofiler.streamlit.app/)
-- [GO TO GITHUB REPO](https://github.com/alexfrf/scouting-profiler)
-- [GO TO THE VIDEO PRESENTATION ON YOUTUBE](https://www.youtube.com/watch?v=UlVIGp-x7VM&t=1700s)
+- [GO TO THE STREAMLIT APP -v2.0-](https://scouting-profiler.streamlit.app/)
+- [GO TO GITHUB REPO -version 1.0-](https://github.com/alexfrf/scouting-profiler)
+- [GO TO THE VIDEO PRESENTATION ON YOUTUBE -version 1.0-](https://www.youtube.com/watch?v=UlVIGp-x7VM&t=1700s)
 
 
 - **Disclaimer 1: Both data and the app itself are written in Spanish**
 
 - **Disclaimer 2: This model, including the app build-up, is entirely written in Python. You can check out the code line by line on the [Github Repo](https://github.com/alexfrf/scouting-profiler)**
 
-The purpose of this project is to develop a model that, when deployed on an app, will segment players in the world's most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team's style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed. These footballers will potentially be the best fit for the needs of the team going to the market, as they will require a shorter adaptation process and will know similar game mechanisms, since they come from teams that show tactical similarities.
+The purpose of this project is to develop a model that, when deployed on an app, will segmentate players in the world's most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team's style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed. These footballers will potentially be the best fit for the needs of the team going to the market, as they will require a shorter adaptation process and will know similar game mechanisms, since they come from teams that show tactical similarities.
 ![png](/Documentacion/streamlit.png)
 
-#### Data Sources
+#### Data coming from
 
-- [InStat](https://www.hudl.com/products/instat)
+- [WyScout](https://www.hudl.com/products/wyscout)
 - [Transfermarkt](https://www.transfermarkt.com/)
 
-In the following lines, we will explain the technical procedures that were carried out, from the extraction of the necessary data to the deployment of the application in the Streamlit cloud. We will also detail the scripts and functions used in each step. The structure of this explanation is as follows:
+This application employs an analytical model to segment the characteristics of players in football competitions within the potential market of the study, using advanced metrics. By considering the playing style of teams, the application can associate the players who best fit their approach for each position on the field. The algorithm quantifies and aggregates the playing style of teams to then profile each player in a specific position based on the key metrics of each role. Thus, it is possible to identify, empirically and with a completely data-oriented approach but with a clear intention of contextualization, those players who are most suitable for the desired role in a particular team and tactical context.
 
-- **SOURCE DATA: Content and Treatment (Extraction, Import and Transformation)**
-     - Instant Data
-     - Transfermark data
-     - Cleaning and treatment of tables + auxiliary functions
-     
-          
-- **DATA MODELING**
-     - Feature Engineering
-     - Creation and Definition of Metrics
-     
-           
-- **SEGMENTATION PROCESS**
-     - Segmenting the teams + definition of key metrics
-     - Segmenting the players + definition of key metrics
-     
-           
-- **DISTANCE ALGORITHMS**
-     - Team_Mapping: degree of adequacy of the player to a certain game model and position.
-     - Player_Similarities: degree of resemblance to a given player.
-     
-           
-  
-- **THE APP EXPLAINED**
-     - Application coding
-     - Deployment and repository
-     - Displayable Elements
+The players returned by the model will have more suitable conditions to meet the team's needs when entering the market. Therefore, they will require a shorter adaptation process and will be familiar with similar playing mechanisms, having belonged to teams that exhibit comparable patterns in their playing style.
 
+Throughout this manual, we will attempt to explain the functioning and logic of the app, highlighting its main features.
 
-### Source Data | Extraction, Import and Transformation
 
-The data used in this project comes from two sources: Instat and Transfermarkt. The export from each source presents differences. The Instat data was downloaded in Excel format from the provider's website. For each league, we found two files, one for players and another for teams. We have this information for the first divisions of 24 countries and the second divisions of the five major leagues: Spain, England, France, Italy, and Germany.
 
-| Código | País | Liga |
-|---|---|---|
-| A1 | Austria | Bundesliga |
-| AR1N | Argentina | PrimeraDivision |
-| BE1 | Belgium | JupilerProLeague |
-| BRA1 | Brazil | BrasileiroSerieA |
-| BU1 | BulgariaFirstLeague | BulgariaFirstLeague |
-| C1 | Switzerland | CreditSuisseSuperLeague |
-| ES1 | Spain | PrimeraDivision |
-| ES2 | Spain | SegundaDivision |
-| FR1 | France | Ligue1 |
-| FR2 | France | Ligue2 |
-| GB1 | England | PremierLeague |
-| GB2 | England | Championship |
-| GR1 | Greece | SuperLeague |
-| IT1 | Italy | SerieA |
-| IT2 | Italy | SerieB |
-| KR1 | Croatia | HNL |
-| L1 | Germany | Bundesliga |
-| L2 | Germany | Bundesliga |
-| NO1 | Norway | Eliteserien |
-| PL1 | Poland | PKOBankPolskiEkstraklasa |
-| PO1 | Portugal | PrimeiraLiga |
-| RO1 | Romania | Superliga |
-| RU1 | Russia | PremierLeague |
-| SC1 | Scotland | PremierLeague |
-| SE1 | Sweden | Allsvenskan |
-| SL1 | Slovenia | SNL |
-| TR1 | Turkey | SuperLig |
-| TS1 | CzechRepublic | FortunaLeague |
-| UNG1 | Hungary | NBI |
+It is worth noting that, for a better visualization of the interface, it is recommended to decrease the zoom level of the web browser to 80-90% on this page. Additionally, while access on mobile devices and tablets is entirely possible, the interaction with the app is significantly enhanced when using a computer.
 
-On the other hand, the transfermarkt data referring to the report is scraped directly from the web using the Requests and BeautifulSoup libraries, using the code included in the *Tmarkt_scraper.py* script. This task results in the creation of three files:
+### Source Data
 
-- **tmarkt**: made up by the basic information of the players that are part of the competitions listed above.
-- **leagues**: metadata of teams and leagues
-- **equipos_sistemas**: stands for detailed information on match plans, collected in Transfermarkt [here](https://www.transfermarkt.com/Real%20Betis%20Sevilla/spielplan/verein/150/saison_id/2021/plus/1#ES1). The coach who directed the team in each match and the playing system are collected. Based on this information, a series of metrics related to the absolute and relative time of use of each structure are calculated.
+The app is constructed based on aggregated player and team data from the 2022/2023 season, extracted from the specialized portal WyScout. Below is the set of competitions included in the model and visible in the interface.
 
-Based on this information, the *data_cleaning.py* script imports the files and, after concatenating the Instat team and player data by competition, performs the following operations:
+![png](/Documentacion/comps.png)
 
+If necessary, it would be possible to expand the set of included leagues by adding other competitions that the data provider includes.
 
-**Squads' data**
+### Methodology
+The model has a significant strength compared to those typically published in the past, as it takes into account the playing style of the teams it evaluates. The final recommendation for a player in a particular position not only considers variables of similarity between players but also the playing style of the teams in which all analyzed players play. To model this, the proposal of teams is distinguished through the analysis of four categories:
 
-- It is not possible to connect the information from both sources directly, since the equipment does not have the same name in origin. For this reason, in order to be able to join both tables, we will use a connection algorithm by text similarities, Fuzzywuzzy, for the clubs in each competition. In this way, we will discern which Instat team each Transfermarkt ID corresponds to.
+- Tactical Setup: Organization and System
+- Defense: Pressure, width, and height
+- Buildup: Ball distribution, pace, combinations in the opponent's half, width with the ball, attitude after recovery.
+- Opportunity Generation: Origin of the ball when it reaches the area, yield according to the type of attack (positional vs. counterattack vs. set pieces)
 
-- After this process, and once each team has been assigned its identifier, we will be able to incorporate Transfermarkt data regarding leagues and game systems.
+Each mentioned category will be assigned variables that relate more closely to what each of them values. In the second phase, as we will see later, the model will choose, from the set of provided variables, a smaller number of them—or a mix, sometimes—that can, on their own, establish subgroups within the category and explain them in a meaningful way.
 
+In the case of players, the model distinguishes between six main positions, with some of these positions having several specific roles:
 
-**Players' Data**
-
-- We repeat the connection procedure between both data sources, although, in this case, given the existing complexity in the text and the existing number of lines, it is not reduced to just one iteration with the similarity algorithm.
-
-- After this procedure, we take the resulting values ​​with a sufficient score to ensure their reliability. We will assign these names to a Transfermarkt ID. With the rest -bad score or duplicate assignments- we proceed to look for their transfermarkt ID through queries on their page in google. For those with which a positive search is found, as long as they do not show duplications with respect to the assignment previously made, an identifier will be assigned. Otherwise, the ID must be assigned manually.
-
-- Having made the assignment of the excel identifier to unassigned elements, we will import it and join the rest of the data. We will review, before moving forward, possible duplicate cases.
-
-- After this process, and once each team has been assigned its identifier, we will be able to incorporate the Transfermarkt data regarding players -club, market value or position according to the web-.
-
-It should be noted that, from the moment of data export, both the team and player variables are normalized to 90 minutes.
-
-
-### Data Modeling
-
-The following notebooks are used in this process:
-
-- *modeling_functions.py* contains the metric calculation functions 
-- *modeling.py* includes the execution of the necessary functions included in the script commented above + a series of feature engineering procedures that we will explain below.
-
-In this last script, as we said, the necessary procedures are carried out for the dimensional reduction of rows in the player dataset, in order not to include in the model players who, due to having played a reduced amount of game time or this has always been carried out in the same context -the last minutes of the match-, can distort the results and validity of the same. It is carried out using the outlier detection method via the interquartile range, based on two columns: % of matches in the competition played by the player and % of matches played in which they have entered from the bench. In addition, we will not use players who have played less than seven games for the analysis.
-
-Subsequently, the execution of the metric calculation functions is carried out, both for players and teams, and for determining the position on the field. We complete this part by calculating a Gini index for the teams, which indicates the range of dispersion -or decentralization- in the generation of opportunities -we do it, specifically, on the variable of Goals + Expected Assists-, and, additionally, through the OneHotEncoder method, we transform the good leg variable into a numeric one. This helps us to determine, for wingers and wingers, if they act with their natural leg or not.
-
-In addition, a function that acts on the numerical variables will be applied to both datasets, adjusting them to the possession of the teams.
-
-
-### Segmentation Process
-
-The following notebooks are used in this process:
-
-- *clustering_functions.py* contains the functions.
-- *clustering.py* includes the execution of the necessary functions included in the script commented above + a series of exports in csv of metadata necessary for the execution of the distance functions.
-
-The model is based on a logic of distances based on the segmentation of the game models of the teams - based on variables labeled according to four very different game categories that we determine below - and the characteristics of the players in each position in the game. field.
-
-**Game Categories for Teams Game Model**
-
-The variables that will be assessed in order to segment the game model of the **teams** are defined below. Said analysis will be undertaken differentiating between four categories:
-
-- Tactical disposition, understood as the organization of the team on the field
-- Defense and Pressure
-- Buildup / Ball possession
-- Chances Creation and Definition
-
-The function that follows will perform the clustering of the equipment based on the four categories mentioned above. Below we will analyze the results in order to outline each of the clusters that are generated for all the categories.
-
-First, the dataset will take the columns mentioned above for the category in question, which will be normalized via the MinMaxScaler. The VarianceThreshold algorithm will be applied to it, in order to detect if there are constant or practically constant variables. After that, **PCA** will be applied up to an explained variance of 90%. The elbow method will help us determine the optimal number of clusters that the **KMeans** clustering algorithm. We will specifically mark that the model does not segment each category into more than four groups.
-
-With this, we will obtain the clustering of the game models based on these categories. However, in order to analyze it more clearly, we will extract the most explanatory real variables (up to 90%) using a **RandomForestClassifier**. The function will return different plots that will help us in our analysis, details of the operation of the training process of the PCA and ElbowMethod processes, and a dataset with the assignment to the clusters. In addition, we will also have a dataframe with the variability explained by each of the variables.
-
-**Tactical Disposition**
-
-This chapter deals with the structure proposed on the field of play, referring to the system used and the number of players occupying each line, expressed as the percentage of time over the total minutes played. Next we check the weight of each variable in the model. The following stand out:
-
-- % of time spent playing with defense of four men
-- % of time spent playing with double pivot
-- % of time spent playing with defense of four men
-- % of time spent playing with just one striker
-- % of time spent playing with three forwards
-
-The PCA algorithm selects the first six of the present image.
-
-![png](/Model/Teams/Feature_scores_disposicion_tactica.png)
-
-- C1: Four defenders, double pivot, one striker - 4-2-3-1
-
-![png](/Model/Teams/ttc1.PNG)
-
-- C2: Four defenders, two forwards - 4-3-1-2, 4-4-2
-
-![png](/Model/Teams/ttc2.PNG)
-
-- C3: Three center backs, do not play with a striker - 3-4-3, 3-5-2
-
-![png](/Model/Teams/ttc3.PNG)
-
-- C4: Four defenders, three forwards - 4-3-3
-    
-![png](/Model/Teams/ttc4.PNG)    
-
-![png](/Model/Teams/PCA6_4clusters_disposicion_tactica.png)
-
-**Defense**
-
-This chapter addresses the team's defensive proposal, covering variables that try to explain defensive intensity, heights and the time dedicated to being reactive.
-
-- Pressures for every 100 defensive actions
-- Recoveries in rival field
-- pressures
-- % of the recoveries that are made in the opposing field
-- % of effective pressures
-- Opposing passes by defensive action (PPDA)
-    
-The PCA function selects the first nine variables from this image.
-
-![png](/Model/Teams/Feature_scores_defensa.png)
-
-- C1: Less pressure tendency, more low withdrawal and more time defending.
-
-![png](/Model/Teams/tdc1.PNG)
-
-- C2: More defensive intensity in intermediate zones.
-
-![png](/Model/Teams/tdc2.PNG)
-
-- C3: Different heights depending on the situation and efficiency when they decide to defend high.
-
-![png](/Model/Teams/tdc3.PNG)
-
-- C4: More prompt to press, high defense and aggressiveness in the opposite field.
-
-![png](/Model/Teams/tdc4.PNG)
-
-![png](/Model/Teams/PCA9_4clusters_defensa.png)
-
-**Buildup**
-
-This chapter deals with the team's proposal with the ball, showing variables that try to illustrate the way in which the team proceeds with the ball out and settles and/or progresses in the rival field.
-
-- Incursions into rival field for every 100 passes
-- Pace - time (seconds) with the ball for each incursion in the final third
-- Buildup situations per 100 possessions
-- Time with the ball (in seconds)
-- Incursions to final third
-    
-The PCA function selects the first seven variables from this image.
-
-![png](/Model/Teams/Feature_scores_buildup.png)
-
-- C1: Long possessions, low volume of play in the final third, long transitions and from afar, little incidence of counterattack.
-
-![png](/Model/Teams/tbc1.PNG)
-
-- C2: Progression towards a more direct rival field, high tendency to counterattack, high pace in construction and arrival in the box with few passes.
-
-![png](/Model/Teams/tbc2.PNG)
-
-- C3: More elaborate ball release from the back, slow pace under construction and long possessions, little recourse to counterattack.
-
-![png](/Model/Teams/tbc3.PNG)
-
-- C4: Short transitions in the opposite field, relatively elaborate ball release, high volume of play in the final third, very high pace and verticality.
-
-![png](/Model/Teams/tbc4.PNG)
-
-![png](/Model/Teams/PCA7_4clusters_buildup.png)
-
-**Chances Creation and Finishing**
-
-This chapter looks at the way the team proceeds in the final third of the field, its clear-sightedness in generating opportunities and the value produced in the area.
-
-- Goal plays for every 100 incursions into the rival field
-- Chances created (shot or key pass) every 100 incursions in the last third
-- Expected goals per 100 actions
-- Key passes per 100 passes
-- Entries in rival area
-    
-The PCA function selects the first eight variables from this image.
-
-![png](/Model/Teams/Feature_scores_creacion_oportunidades.png)
-
-- C1: Low transformation index (shot or opportunity) when reaching the rival area, reduced association to generate -greater dependence on individual action-.
-
-![png](/Model/Teams/toc1.PNG)
-
-- C2: Little ability to make their possessions profitable but a relatively high number of arrivals and possibilities of passing to the area/centre, low level of association in final meters.
-
-![png](/Model/Teams/toc2.PNG)
-
-- C3: High transformation rate (shot or opportunity) when reaching the rival area, individual quality to find a good opportunity, greater association between attacking players.
-
-![png](/Model/Teams/toc3.PNG)
-
-- C4: Decent transformation ratio for each attack, less association between attackers to find the opportunity.
-
-![png](/Model/Teams/toc4.PNG)
-
-![png](/Model/Teams/PCA8_4clusters_creacion_oportunidades.png)
-
-
-**Positional categories for players**
-
-We will segment the **players** according to their characteristics, differentiating by the position they are placed regularly on the field, making up five different groups:
-
-- Centre-Backs (DFC)
-- Full-Backs
-    - Left-Backs (LI)
-    - Right-backs (LD)
+- Goalkeepers (GK)
+- Center Backs (CB)
+- Fullbacks
+	- Right Backs (RB)
+	- Left Backs (LB)
 - Midfielders
-    - Pivots and defensive midfielders (MCD)
-    - Central and interior midfielders (MC)
-- Advanced Midfielders or Wingers
-    - Advanced Playmakers (MCO)
-    - Right wingers (ED)
-    - Left wingers (EI)
-- Center Forwards / Strikers (DC)
+	- Defensive Midfielders (CDM)
+	- Central Midfielders (in three-midfield systems) or second midfielder in a two-men-formation such as 4-2-3-1 or 4-4-2 (CM)
+- Offensive Midfielders
+	- Attacking Midfielders (CAM)
+	- Right Wingers (RW)
+	- Left Wingers (LW)
+- Forwards (ST)
 
-The function that segments the players will perform the clustering of the players based on all the positions mentioned above. Each main position has, in turn, some key variables. Below we will analyze the results in order to outline each of the clusters that are generated for all positions.
+Similar to evaluating team play, each of the mentioned main positions will be assigned key variables to explain both performance and role differentiation. For example, defensive standard metrics—those related to duels, interceptions, tackles, etc.—will carry more weight for defenders and pivots than in other cases. Similarly, metrics like xG will barely influence the definition of center-backs but are crucial for evaluating and classifying almost any player participating in the attack, including fullbacks.
 
-First of all, the dataset will take the columns mentioned above for the position in question, which will be normalized via MinMaxScaler. The VarianceThreshold algorithm will be applied to it, in order to detect if there are constant or practically constant variables. The training process will begin there, which consists of applying PCA up to an explained variance of 90% and applying KMeans.
+The model will take the defined metrics and determine which ones are most important in explaining the different profiles within each position. Additionally, based on the presented numbers, it will assign a role to each player for each position.
 
-After this process, we will measure the correlation between the variables and we will discard those that present a high value in the matrix. After that, the most explanatory real variables are extracted with respect to the clusters given by the kmeans applied by means of a RandomForestClassifier, in order to clarify the model even more.
+The described methodology allows the analyst of the coaching staff to interpret why a player/team has been labeled in a certain way. They can visualize in the application the weight that each metric has had in this process. Furthermore, it is even possible to modify the inclusion criteria of variables, allowing for the redesign of the model based on the playing style of the team that will use it—for example, a team playing direct football may prefer metrics associated with receiving long balls or heading accuracy after a lateral cross to weigh more in the assessment of attackers than other metrics such as dribbling success, passes to the final third, or expected assists.
 
-PCA is applied again, this time on the subset of variables extracted from the classifier -as many principal components as necessary to explain 90% of the variance-. After that, we generate the clusters via KMeans on the resulting PCAs.
+### App Features
 
-With this, we will obtain the clustering of the attributes of the football players based on their position. The function will return different plots that will help us in our analysis, details of the operation of the training process of the PCA and ElbowMethod processes, and a dataset with the assignment to the clusters. In addition, we will also have a dataframe with the variability explained by each of the columns.
+At this point, we will navigate through the interface, explaining the logic of the visualizations it provides and how the results of the implementing model are explained.
 
-**Centre-Backs**
+First and foremost, we must recall the main objective of this app: given a specific team/playing style and a position on the field, it will return a list of players who are most suitable/compatible to play in that position under the playing style of the marked team.
 
-For this position, the most explanatory variables and those that contribute to a greater extent to compose the differences between players and group them are the following.
+### Filters Area
 
-![png](/Model/Players/dfc_seg.png)
+The first thing to note is the filters bar, located on the left (which can be expanded or collapsed to facilitate the visualization of the analytical part of the app). In this bar, we have two key indicators to cover for the model to start working:
 
-- C1: Greater tendency to make tackles and go out of the area -higher rate of committing fouls-, less propensity to aerial duels.
+- Position on the field for which we will perform the search.
+- Team from which we want to obtain information.
 
-![png](/Model/Players/dfcc1.PNG)
+In addition to these two key parameters, there are two fields related to the methodology that the model will apply to obtain information, and by default, they are unchecked. Under default conditions—without marking any of these fields—the app will act as described above in bold—take the playing style of our team and return players from that position who fit its parameters.
 
-- C2: Mastery of the aerial game, more defensive disputes, greater ability to prevail individually, less participation with the ball.
+If we check the "Customize Model" option, we will be allowed to set, as desired, a label for each phase of the game in our team. This procedure would be useful for teams that, for example, know they are going to modify their playing style with the arrival of a new coach compared to what is in the data. In that case, they can "design" the conditions of their new playing style by providing parameters in that option.
 
-![png](/Model/Players/dfcc2.PNG)
+![png](/Documentacion/psm.png)
 
-- C3: Less propensity to duels and tackles, fewer fouls, greater participation with the ball.
+If we select the option "Show players similar to a reference XX," the model, instead of considering the playing style of teams, will exclusively rely on similarities between players. This feature will be useful in cases where a team decides to replace a player by seeking a copy that closely resembles the outgoing player. For instance, if Real Madrid loses Karim Benzema and is determined to replace him with the closest possible match, activating this function would eliminate the "noise" caused by matching based on playing style similarity. It wouldn't return exact copies of players but rather those who best fit considering the team's formation and the other pieces in place under Carlo Ancelotti. As an interesting note, on the left, we display the 15 forwards most suitable for Real Madrid's model (unchecked checkbox), and on the right, what would be returned if we activate this option—the 15 players most similar to Benzema according to the data.
 
-![png](/Model/Players/dfcc3.PNG)
+![png](/Documentacion/sims.png)
 
-**Full-Backs**
+We'll leave both options unchecked to make the original model work, which is generally the one that should be used more often. Let's continue reviewing the input variables.
 
-For this position, the most explanatory variables and those that contribute to a greater extent to compose the differences between players and group them are the following.
+The "Q" parameter determines the number of players the model will return, while the ones listed below will be used to restrict or expand certain parameters of the players. They are as follows:
 
-![png](/Model/Players/lat_seg.png)
+- Market Value (Transfermarkt): Limited, by default, to a maximum of 1 million for Racing de Ferrol's model.
+- Age: Limited by default to a maximum of 30 years.
+- Minutes Played: Limited by default to a minimum of 800. The model only considers players who have played at least 15% of the minutes in their league during the 22/23 season or more than 500 minutes.
+- Preferred Foot
+- Preferred Profile: This category is important if we want to search for players belonging to a position but need to identify a very specific profile. An illustrative example would be Arsenal or Real Sociedad looking for players to fill the roles that Martin Ødegaard and David Silva played in those teams, respectively. They will need to specify that they are looking for an interior who is not only left-footed but is also accustomed to playing on the right side.
+- Years Until End of Contract (no default limitation): allows the model to only return players with a maximum of X remaining years on their current club contract.
+- League Selection: allows modifying the criteria for selecting the leagues whose players will appear in the app. Additionally, even while maintaining the default criterion, you can exclude a particular league.
 
-- C1: Playmaker from the side, less defensive intensity but does not gain height in attack. A lot of participation in buildup and elaboration.
+### Model Results
 
-![png](/Model/Players/latc1.PNG)
+Once the criteria of operation are specified, the model will primarily return a list of players who, taking into account the set filters, most closely resemble the playing style of the teams. Additionally, it provides key information for the user to interpret the results. Before discussing that table, let's analyze the two tables above.
 
-- C2: Inverted full-back, joining the attack towards interior areas.
+The left table indicates how the model has classified our team for the four analyzed phases of the game. To understand the results, you simply need to click on "Go to Explanation of Game Model Clusters." This will take you to an area where the meaning of each profiling is explained, which teams are in each category, or what some of the key variables are to explain these results. For example, in the case of Racing, we see that, in Defense, the team is labeled in cluster 4. By navigating to the description, we get an explanation that helps contextualize it, and we can see the behavior of the cluster, for certain key metrics, compared to the rest of the groups.
 
-![png](/Model/Players/latc2.PNG)
+Something similar can be found in the case of players. The table on the top right shows the existing roles, according to the model, for the specified position—in this case, for the fullback. These roles essentially describe the player's style of play or the function the player performs when playing in that position. By clicking on the Explanation, we will see the explanation of each role and a set of players that the procedure has identified as belonging to that group.
 
-- C3: Gains depth and seek for crosses, high involvement in the generation of chances and less participation in buildup.
+The player table defines, therefore, those players who have the greatest similarity in their game to the selected team's model. This table presents, in addition to the basic player data, three key variables:
 
-![png](/Model/Players/latc3.PNG)
+- Similarity: This is the most important metric in the context of this project, as it effectively measures how closely the player aligns with our playing style. A 100 in this metric would show a perfect match—though for obvious reasons, this indicator will never be that high. In the table just below (purely indicative), we can see, among other indicators, the score that separates, for example, the top 10% of the most similar players from the rest (PCT90 column) and how many players meet that rule.
 
-- C4: Rather classic profile. Lower rate of crosses, greater volume of defensive activity, little arrival in areas of the last pass.
+- Perf (Performance): This is an indicator of the player's level according to the data. A higher indicator means better performance in key metrics during the specified season.
 
-![png](/Model/Players/latc4.PNG)
+- Cluster: This defines the player's role in that position. It is determined using the same metrics—which we will see below—that the model uses to calculate "Similarity."
 
-**Midfielders**
+It should be noted that some players may appear in multiple different positions, depending on the number of minutes they have played in each position. As an example, we know that Quique Fornos will appear both if we evaluate central defenders—his natural position—and fullbacks—since he played many minutes as a right back in the last season.
 
-For this position, the most explanatory variables and those that contribute to a greater extent to compose the differences between players and segment them are the following.
+Next to the table, we see two visualizations:
 
-![png](/Model/Players/cen_seg.png)
+- The first shows the most relevant variables for calculating the similarity score and the degree of influence they have held. Thus, variables related to ball progression, frequency of doing so, or propensity for duels are considered the most important for differentiating central defenders in this case.
 
-- C1: More offensive profile, fewer defensive actions, greater participation in creating chances, drop to the wing and receptions close to the area.
+- The graph on the right provides an initial image of the role that the model associates as the most representative of the position in the club in question. Here, at a glance, we can see that, in the case of fullbacks, there is no role that clearly dominates, although the long fullback—which is the most offensive profile of all the roles classified—is slightly more favored.
 
-![png](/Model/Players/cenc1.PNG)
+![png](/Documentacion/vars.png)
 
-- C2: Pivot, high volume of defensive tasks, little participation in the final third, high rate of disputes and receptions at the base of the play.
+Once we have obtained the results from the model and have an idea of the type of player being offered, we can proceed to analyze the profiles and players that the model has returned to us.
 
-![png](/Model/Players/cenc2.PNG)
+### Dashboard
 
-- C3: Ambivalent profile. Covers a lot of area, with and without the ball. Itinerant organizers in teams that appear to build at different heights and midfielders with a high ability to reach the area to finish off.
+In this section of the interface, the most analytically profound visualizations are provided, allowing us to discern the characteristics and level of any recommended player and, additionally, make comparisons and/or seek alternatives. First, we observe a radar chart accompanied by a percentiles indicator. These two visualizations provide a detailed and exhaustive image of the strengths of the player, measuring those variables that are key to the position.
 
-![png](/Model/Players/cenc3.PNG)
+![png](/Documentacion/radar.png)
 
+In the radar chart, the player—in this case, Kvicha Kvaratskhelia, in violet—is compared with the average left midfielder of Serie A. Additionally, a "mold," colored in light gray, is shown, displaying the maximum values that left midfielders in Italian football achieved during the season. On the right, the percentile chart contextualizes the player by measuring them against the rest of the players in the main position across any league, indicating, for each metric, their proximity to the best possible score. Holding a 97th percentile in completed dribbles, as in the example here, implies that the player surpasses 97% of players in the model in that statistic. In this chart, for example, the Georgian player is being compared not only against left midfielders but also against attacking midfielders and right wingers. Below, as we see, a score is established, out of 99, for the player based on the level shown in the evaluated variables. Green-colored metrics are considered defensive, orange ones are related to construction, and purple ones are offensive.
 
-**Attacking Midfielders / Wingers**
+The second part of this section allows for the comparison of the player that we have discovered, thanks to the model, in the initial zone and that we have analyzed using the radar and the percentile chart. Let's assume we are conducting the analysis in the context of Manchester City.
 
-For this position, the most explanatory variables and those that contribute to a greater extent to compose the differences between players and segment them are the following.
+The tool allows us, within the same radar, to check the metrics of the analyzed player—keeping Kvaratskhelia—and measure them against the player currently playing the same position in the team, namely Jack Grealish. We can perform the same comparison using the tornado chart just below, which compares the percentiles recorded by both players. As above, the score that each player obtains in each game category is presented.
 
-![png](/Model/Players/mco_seg.png)
+![png](/Documentacion/radar_comp.png)
 
-- C1: Winger on natural foot, facer and dribbler. High rate of crosses in the baseline. Wingers that play very high are included.
+In addition to the above, the user can measure the degree of similarity of the player being analyzed with the set of players already in the squad for the same position. Additionally, the model returns, on the right side of the zone, the players who most resemble both the player on the left of the radar and their comparison.
 
-![png](/Model/Players/mcoc1.PNG)
+### Context
 
-- C2: Self-sufficient players, always in the center or on the wing with a different leg. High incidence in the area (high values ​​of the last pass and own opportunities enjoyed).
+The last point in the analytical zone allows the user to measure the player in question and compare them with the rest of the players in that position in an interactive and customized way. After selecting the two variables that are considered most appropriate for the comparison, a scatter plot will be displayed where elements will be positioned, and they will be differentiated by their role through the color of their label. At a glance, we can already discern that the role of "Self-Sufficient Winger" shows better numbers in the two default selected metrics—Key Passes and Completed Tackles in Deep Areas.
 
-![png](/Model/Players/mcoc2.PNG)
+In the above image, we see the results obtained by defining two new variables—xG+xA (to measure the level of chances they create) and Completed Dribbles—seeing how offensive midfielders selected by the model for Manchester City behave under those measures.
 
-- C3: Inverted wingers or attacking midfielders with high value generated through the pass and a lot of participation in construction. Some, accustomed to playing in the position of 10 or as interiors in 4-3-3.
+It is deduced that Kvaratskhelia (highlighted in bold as the player we are analyzing in the Dashboard) has extremely high numbers in successful dribbles—much more than Grealish or Foden and close to a specialist like Boufal—while he is slightly above average in terms of xG+xA, but far from players who normally do not play as wide and are closer to the goal, such as Donyell Malen or Pedro Gonçalves.
 
-![png](/Model/Players/mcoc3.PNG)
-
-**Forwards**
-
-For this position, the most explanatory variables and those that contribute to a greater extent to compose the differences between players and segment them are the following.
-
-![png](/Model/Players/del_seg.png)
-
-- C1: Penalty-area-based striker, dribbler in short spaces, less movement without the ball, less participation in possession.
-
-![png](/Model/Players/dcc1.PNG)
-
-- C2: Greater influence in the generation of opportunities, both for themselves and for their teammates. Striker with a wide range of movements and self-sufficient.
-
-![png](/Model/Players/dcc2.PNG)
-
-- C3: More aerial duels and dominance of the game by imposing his rule up high. Static but with participation in the game -receiving from behind, winning duels that lead to second play-.
-
-![png](/Model/Players/dcc3.PNG)
-
-- C4: More defensive effort and participation in development, second striker / false nine profile. He moves and stays wide, dribbles and generates supporting plays for surrounding players.
-
-![png](/Model/Players/dcc4.PNG)
-
-
-### Distance Algorithms
-
-The two processes outlined below aim to turn all of the above analytical modeling into actionable knowledge. Both have in common, on the one hand, their purpose of serving the sports management in the task of refining and basing the player recruitment process on data; and, on the other, the use of the Euclidean distance as a means to determine the conclusions. However, the starting point and the meanings are very different, which differentiates them and also complements them, as we will see in the practical cases.
-
-- The **player_Similarities** function measures the degree of similarity between a player and the rest of his homonyms. It takes a player and returns a table with the Euclidean distance with respect to the most similar ones. It should be noted that, although there may be a relationship between the results of this model and the level of the player, what it tries to illustrate is exclusively the similarity between one player and another, leaving aside their level and quality.
-
-
-- The **team_Mapping** function, for its part, takes some base data corresponding to a specific game model and returns the players whose attributes are closest -and, therefore, are most appropriate to adapt to that context-. It takes a subposition and a team, and returns a table with the Euclidean distance from the closest players to that base data.
-
-The functions are collected in the script: *clustering_functions.py*.
-
-*Player_Similarities* fits the distance measurement function prototype, and its results are easy to see on any advanced player analytics website. This function becomes relevant in practice when we are interested in replacing a footballer whose profile and role is very defined. A clear case will happen when a purely selling club has to release a key piece and wants to look for a replacement that is as similar as possible, to avoid redefining its game model.
-
-![png](/Model/Players/rodri1.PNG)
-
-![png](/Model/Players/rodri2.png)
-
-The figures shown above show the results of the model in the case of the players most similar to Rodrigo Hernández, the Manchester City midfielder. Said process, as we have already indicated, does not assess the adequacy of the player to Rodri's ecosystem, but simply assesses similarities between the characteristics of the players in his position. Among the names that are returned is, obviously, that of Sergio Busquets, his predecessor in the national team and pivot of Barcelona, ​​which in turn is one of the teams whose model most closely resembles that of the team currently led by Pep Guardiola. However, there are also players who act in contexts other than the model of possession and position play -John Lundstram (Rangers) or Thiago Alcántara (Liverpool)-.
-
-As a practice-oriented example, we can apply the model to the context of Sevilla FC, which in the summer had to deal with the departures of its starting central defenders, Diego Carlos and Jules Koundé. We take a look at the role returns for the French centre-back below, looking at the players who most resemble him and a comparison with some of the biggest names.
-
-![png](/Model/Players/kounde2.PNG)
-
-![png](/Model/Players/kounde1.png)
-
-We endorse the results of the model by comparing Jules Koundé and Samy Mmaee, the Moroccan central defender for Ferencvaros. We found that the morphology of the radar, indeed, shows great similarity, and that, for general purposes, both players share strengths and weaknesses despite the level differences that may exist.
-
-![png](/Model/Players/mmaee.PNG)
-
-In fact, we can see that, despite the divergence in the market value -€60M vs. €1M-, the French center-back does not show a clear superiority -with the exception of the recoveries made in the rival field-, which may imply a certain competitive advantage for the Nervionenses, since they could eventually find a financial replacement in the Ferencvaros center-back very appetizing, and that, given the figure for which it was sold to Koundé, it would be an economic operation of great benefit while, sportingly, damage would be limited. The results are also encouraging if we measure Koundé with Castello Lukeba, the Lyon centre-back who, obviously, has a superior lineup to Mmaee and a value that, for economic purposes, would probably keep him off Sevilla's radar.
-
-![png](/Model/Players/kounde3.png)
-
-**Team_Mapping** groups all the teams belonging to the same series of team clusters and extracts an average value of all their metrics. That will be the point of reference, for the teams that belong to said clusters, when looking for similar players.
-
-The fact that the model returns players that are close to an average portrait implies that there will be similarities at the profile level, but obviously it does not mean that the level of the player in question corresponds to that of the team in question. For this reason, and also because the economic reality of the club itself must be taken into account, it is important to take into account the variables of market value, age or the most cutting-edge performance metrics. In the tables below we will show the Instat index as a measuring element of the player's level, and can act as a filter.
-
-It is worth to focus on the similarities, and for this we will show some quick examples, going through the team and the need in question, and in which we will be returned a list with the footballers closest to the metrics of the game model of the indicated team.
-
-![png](/Model/Players/city_centrales.PNG)
-
-We see in the example the list of central defenders that are closest to the metrics of the Manchester City model for that position, establishing a filter of *InStat Index* that is not very exclusive. As we saw earlier in the profiling, the center backs of this cluster are characterized by excellent footwork and extraordinary precision when changing direction. They must also be quick, as Pep Guardiola's team places the defensive line very far from their goalkeeper, and with the ability to anticipate.
-
-We take Manuel Akanji as an example below, and we measure his similarity on the radar with one of the central citizens, the Spanish international Aymeric Laporte. We also add the dashboard of what the model considers to be the center-back that best fits in this environment: Nino, a promising Brazilian defender for Fernando Diniz's buoyant Fluminense -who, in fact, puts his two center-backs on that table-.
-
-![png](/Model/Players/akanji.png)
-
-![png](/Model/Players/nino.PNG)
-
-To check the ambivalence of the model, we will now face another problem in defense, but this time we will look for left-backs adapted to the Chelsea style, a team that, although it defends up front and also demands a clean start from behind, has a fundamental character that must be taken into account in the model: he has been in a line of 3 center-backs for years, with which he must find players who adapt to the role of winger. Once again, full-backs are shown who pass the same permissive InStat Index filter -which simply discards players who are clearly not comparable, in terms of competition level, to the Chelsea context- but with an age of no more than 30 years.
-
-![png](/Model/Players/inter.PNG)
-
-Observing the table, we find that the model returns very offensive profiles -clusters 1 (band organizer with less defensive activity) and 3 (deep winger, crosser and chance generator who participates less in construction). Within the diversity, we can verify that there are names that either have a great facility to be differential in higher areas of the field -Alex Telles, Yuri Berchiche- or base their game on an excellent ability to cross -Lucas Digne- or have Experience forming as wingers in defenses of three -Reguilón, Cucurella, Renan Lodi, Fortuna, Doumbia, Estupiñán or Caio Henrique-. There are even players who, in their past or occasionally in the present, act/acted in the extreme position, in the case of the aforementioned Cucurella or Johan Mojica.
-
-![png](/Model/Players/estupinan_alonso.png)
-
-On a practical level, a sports management that places data at the center of decision-making cannot limit itself to running models that compare players, decontextualizing them from the environment in which they develop their game, while not always resorting to the market to look for a profile that is as similar as possible to a player who has left the club -there are many other different contexts that motivate a club to make a transfer-. For these reasons, the optimal strategy is to include the game model as the main axis to profile the player, and establish the metrics that determine the way of playing as the axis to measure the adequacy of a player to the context of the club that intends to fill a vacancy. . Through **team_mapping** we can find out, when faced with a need that arises in the squad or a possible improvement, which are the players in the position in question that are closest to the game model and the tactical conditions we have. This process can provide important information regarding the profile necessary to incorporate, and can help narrow down potential candidates.
-
-If, in addition, said need that makes the club go to the transfer market is motivated by the departure of an important footballer, it will be convenient to combine the result of this function with that of the previous one, and evaluate in detail from the technical perspective -look, watch matches, find out about his personality and environment, assess his injury history, assess whether negotiation with the club to which he belongs is possible, etc- the conditions of those players who appear on the resulting lists and fit into the financial policy of the club .
-
-If the incorporation that is intended to be carried out really satisfies a role that did not exist until today in the template, it would not make so much sense to use the **player_similarities** function, while **team_mapping**, used correctly, would continue to offer some relevant information.
-
-### The App Explained
-
-We begin the last appendix of the project by analyzing the script that generates the different elements available in the application.
-
-#### Application coding
-
-The execution and deployment of the distance functions of the model and of all the elements that are part of the front of the page is done in the *streamlit_imp.py* script. However, the matplotlib and seaborn bar and radar plots that can be distinguished in the app are formulated in the *players_plotting.py* script.
-
-
-
-#### Deployment and Documentation
-
-The app is uploaded to the Streamlit Cloud via a [Github repository](https://github.com/alexfrf/scouting-profiler), specifying a number of basic layout parameters within *config.toml* in the *.streamlit* folder. The aforementioned repository obviously houses the source data and all the necessary code to be able to create the model and the app.
-
-#### Displayable Elements
-
-The app is divided into five very different sections:
-
-- **Vertical Drop-down Bar with Filter Widgets**: it is located on the left of the screen and contains the modifiable parameters that affect the model results. There are three filters that directly affect the model, since it will return the desired number of most suitable players based on the position (vacant) and the team. From there, the results can be shaped according to a series of variables:
-
-   - Market value (transfermarkt) limit
-   - Age limit
-   - Strong Foot
-   - INSTAT Quality Index
-   - Competitions: allows you to choose or omit championships in the model. This will return players from the chosen leagues
-   - Teams: Allows you to choose or omit teams in the model. This will return players from the chosen clubs
-   
- 
-
-- **Title and Introduction**: it is located in the header and tries to explain the motivation of the application and its operation, detailing the origin of the data.
-
-
-- **Model Return**: shows the X players best suited to the selected position and team, in a table detailing the player's club, age, country, market value, Instat index, degree of similarity with the game model and cluster (group) to which the player is assigned. On the right, it shows the most determining variables when establishing clustering and the distances between players.
-
-
-- **Dashboard**: it is located in the part that, vertically, we could call "central" in the application. This section contains the key information of the selected player, either one of those listed in the returns table or any other that we want to consult and compare. Four views are available:
-    - Simple radar of the selected player (upper widget, by default it is the 1st of the returns table). Compare the player (purple) with the average number of players in his position in his league (red) and the maximum for each variable (light grey).
-    - On the right, the percentiles are shown in a bar graph. In this case, the player is compared with all the players in his basic position (if he is a left winger, he will be compared with all the midfielders and wingers) from all the leagues selected in the filter section.
-    - Below is a comparative radar that, by default, measures the selected player with the footballer who occupies the chosen position in the club that we have chosen in the filter section. Likewise, any comparison can be made using the widgets that appear just above the radar.
-    - The fourth quadrant shows the most similar players -without taking into account the game model of the teams- to the football player selected in the first widget-. We can also see the cluster of each of them and their degree of similarity.
-
-
-- **Explanation of Clusters**: this last section explains the segmentation carried out by the model, both for team game models (left), differentiating by game phase, and for players (right), showing the division for position selected. For each group, both in players and in teams, explain the basic characteristics of each cluster, adding, in tables, the members of each group (use widgets). In addition, in the case of teams, a KPI is shown with the average number of expected points for each cluster.
+It should be noted that, as seen in the image, there are points on the graph that are not labeled. The reason is purely visual—if we put names to all the points, it will complicate their reading. Similarly, if we wish to increase the number of players indicated, it can be done through the horizontal bar next to the graph.

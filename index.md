@@ -12,7 +12,7 @@ Constantly involved in a self-development and learning process through formation
 
 [Football Analytics Portfolio (English)](/pdf/afr_eng.pdf)
 
-[Football Analytics Portfolio (Español)](/pdf/afr_eng.pdf)
+[Football Analytics Portfolio (Español)](/pdf/afr_esp.pdf)
 
 ---
 
