@@ -8,9 +8,16 @@ Ability to use high-level scripting language (Python) and data query language (S
 
 Constantly involved in a self-development and learning process through formation and consistency.
 
-[Read More](/about) | [My CV](/pdf/cv.pdf) | [Football Analytics](/pdf/afr_eng.pdf)
+---
 
-------
+[Football Analytics Portfolio (ENG)](/pdf/afr_eng.pdf)
+[Football Analytics Portfolio (ESP)](/pdf/afr_eng.pdf)
+
+---
+
+[Read More](/about) | [My CV](/pdf/cv.pdf) |
+
+---
 
 ## Projects
 
