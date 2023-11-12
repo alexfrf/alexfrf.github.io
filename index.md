@@ -16,7 +16,7 @@ Constantly involved in a self-development and learning process through formation
 
 ---
 
-[Read More](/about) | [My CV](/pdf/cv.pdf) |
+[Read More](/about) | [My CV](/pdf/cv.pdf)
 
 ---
 
