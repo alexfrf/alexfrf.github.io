@@ -1,9 +1,7 @@
 title: Álex Fernández # your name (or website title) here
 logo: "/images/logo.png" # your photo (or logo) here
-description: # your text below (remove <br> elements if you don't need line breaks)
-  <b>
-Data Analyst & BI Developer
-<b>
+description: > # your text below (remove <br> elements if you don't need line breaks)
+  Data Analyst & BI Developer
   <br><br>
   In this space, you can find some insights regarding my projects, as well as some written analytical pieces.
   <br><br>
@@ -11,7 +9,5 @@ Data Analyst & BI Developer
   <a href="https://twitter.com/DonAlexfr">Twitter</a> | 
   <a href="https://www.vavel.com/es/author/alex-fernandez-rodriguez/">Blog</a>
   
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-- jekyll-remote-theme
+theme: jekyll-theme-minimal
 google_analytics: UA-000000-0 # your Google Analytics tracking ID here
