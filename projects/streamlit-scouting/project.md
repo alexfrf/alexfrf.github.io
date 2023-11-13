@@ -95,7 +95,7 @@ We'll leave both options unchecked to make the original model work, which is gen
 
 The "Q" parameter determines the number of players the model will return, while the ones listed below will be used to restrict or expand certain parameters of the players. They are as follows:
 
-- Market Value (Transfermarkt): Limited, by default, to a maximum of 1 million for Racing de Ferrol's model.
+- Market Value (Transfermarkt): Limited, by default, to a maximum of €10 million.
 - Age: Limited by default to a maximum of 30 years.
 - Minutes Played: Limited by default to a minimum of 800. The model only considers players who have played at least 15% of the minutes in their league during the 22/23 season or more than 500 minutes.
 - Preferred Foot
@@ -105,13 +105,21 @@ The "Q" parameter determines the number of players the model will return, while 
 
 ### Model Results
 
+![png](/Documentacion/menu.png)
+
 Once the criteria of operation are specified, the model will primarily return a list of players who, taking into account the set filters, most closely resemble the playing style of the teams. Additionally, it provides key information for the user to interpret the results. Before discussing that table, let's analyze the two tables above.
 
-The left table indicates how the model has classified our team for the four analyzed phases of the game. To understand the results, you simply need to click on "Go to Explanation of Game Model Clusters." This will take you to an area where the meaning of each profiling is explained, which teams are in each category, or what some of the key variables are to explain these results. For example, in the case of Racing, we see that, in Defense, the team is labeled in cluster 4. By navigating to the description, we get an explanation that helps contextualize it, and we can see the behavior of the cluster, for certain key metrics, compared to the rest of the groups.
+![png](/Documentacion/selector.png)
+
+The above table indicates how the model has classified our team for the four analyzed phases of the game. To understand the results, you simply need to click on "Go to Explanation of Game Model Clusters." This will take you to an area where the meaning of each profiling is explained, which teams are in each category, or what some of the key variables are to explain these results. For example, in the case of Racing, we see that, in Defense, the team is labeled in cluster 4. By navigating to the description, we get an explanation that helps contextualize it, and we can see the behavior of the cluster, for certain key metrics, compared to the rest of the groups.
+
+![png](/Documentacion/defense.png)
 
 Something similar can be found in the case of players. The table on the top right shows the existing roles, according to the model, for the specified position—in this case, for the fullback. These roles essentially describe the player's style of play or the function the player performs when playing in that position. By clicking on the Explanation, we will see the explanation of each role and a set of players that the procedure has identified as belonging to that group.
 
-The player table defines, therefore, those players who have the greatest similarity in their game to the selected team's model. This table presents, in addition to the basic player data, three key variables:
+![png](/Documentacion/ld.png)
+
+The players table defines, therefore, those players who have the greatest similarity in their game to the selected team's model. This table presents, in addition to the basic player data, three key variables:
 
 - Similarity: This is the most important metric in the context of this project, as it effectively measures how closely the player aligns with our playing style. A 100 in this metric would show a perfect match—though for obvious reasons, this indicator will never be that high. In the table just below (purely indicative), we can see, among other indicators, the score that separates, for example, the top 10% of the most similar players from the rest (PCT90 column) and how many players meet that rule.
 
