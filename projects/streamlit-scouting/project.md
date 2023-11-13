@@ -48,19 +48,19 @@ Each mentioned category will be assigned variables that relate more closely to w
 
 In the case of players, the model distinguishes between six main positions, with some of these positions having several specific roles:
 
-- Goalkeepers (GK)
-- Center Backs (CB)
+- Goalkeepers (POR)
+- Center Backs (DFC)
 - Fullbacks
-	- Right Backs (RB)
-	- Left Backs (LB)
+	- Right Backs (LD)
+	- Left Backs (LI)
 - Midfielders
-	- Defensive Midfielders (CDM)
-	- Central Midfielders (in three-midfield systems) or second midfielder in a two-men-formation such as 4-2-3-1 or 4-4-2 (CM)
+	- Defensive Midfielders (MCD)
+	- Central Midfielders (in three-midfield systems) or second midfielder in a two-men-formation such as 4-2-3-1 or 4-4-2 (MC)
 - Offensive Midfielders
-	- Attacking Midfielders (CAM)
-	- Right Wingers (RW)
-	- Left Wingers (LW)
-- Forwards (ST)
+	- Attacking Midfielders (MCO)
+	- Right Wingers (ED)
+	- Left Wingers (EI)
+- Forwards (DC)
 
 Similar to evaluating team play, each of the mentioned main positions will be assigned key variables to explain both performance and role differentiation. For example, defensive standard metrics—those related to duels, interceptions, tackles, etc.—will carry more weight for defenders and pivots than in other cases. Similarly, metrics like xG will barely influence the definition of center-backs but are crucial for evaluating and classifying almost any player participating in the attack, including fullbacks.
 
@@ -147,12 +147,16 @@ The tool allows us, within the same radar, to check the metrics of the analyzed 
 
 In addition to the above, the user can measure the degree of similarity of the player being analyzed with the set of players already in the squad for the same position. Additionally, the model returns, on the right side of the zone, the players who most resemble both the player on the left of the radar and their comparison.
 
+![png](/Documentacion/simi.png)
+
 ### Context
 
 The last point in the analytical zone allows the user to measure the player in question and compare them with the rest of the players in that position in an interactive and customized way. After selecting the two variables that are considered most appropriate for the comparison, a scatter plot will be displayed where elements will be positioned, and they will be differentiated by their role through the color of their label. At a glance, we can already discern that the role of "Self-Sufficient Winger" shows better numbers in the two default selected metrics—Key Passes and Completed Tackles in Deep Areas.
 
+![png](/Documentacion/context.png)
+
 In the above image, we see the results obtained by defining two new variables—xG+xA (to measure the level of chances they create) and Completed Dribbles—seeing how offensive midfielders selected by the model for Manchester City behave under those measures.
 
-It is deduced that Kvaratskhelia (highlighted in bold as the player we are analyzing in the Dashboard) has extremely high numbers in successful dribbles—much more than Grealish or Foden and close to a specialist like Boufal—while he is slightly above average in terms of xG+xA, but far from players who normally do not play as wide and are closer to the goal, such as Donyell Malen or Pedro Gonçalves.
+We should understand that Kvaratskhelia (highlighted in bold as the player we are analyzing in the Dashboard) has extremely high numbers in successful dribbles—much more than Grealish or Foden and close to a specialist like Boufal—while he is slightly above average in terms of xG+xA, but far from players who normally do not play as wide and are closer to the goal, such as Donyell Malen or Pedro Gonçalves.
 
 It should be noted that, as seen in the image, there are points on the graph that are not labeled. The reason is purely visual—if we put names to all the points, it will complicate their reading. Similarly, if we wish to increase the number of players indicated, it can be done through the horizontal bar next to the graph.
