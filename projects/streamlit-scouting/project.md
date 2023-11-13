@@ -117,7 +117,7 @@ The above table indicates how the model has classified our team for the four ana
 
 Something similar can be found in the case of players. The table on the top right shows the existing roles, according to the model, for the specified position—in this case, for the fullback. These roles essentially describe the player's style of play or the function the player performs when playing in that position. By clicking on the Explanation, we will see the explanation of each role and a set of players that the procedure has identified as belonging to that group.
 
-![png](/Documentacion/ld.png)
+![png](/Documentacion/lds.png)
 
 The players table defines, therefore, those players who have the greatest similarity in their game to the selected team's model. This table presents, in addition to the basic player data, three key variables:
 
