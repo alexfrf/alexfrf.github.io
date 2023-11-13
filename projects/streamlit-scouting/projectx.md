@@ -25,8 +25,6 @@ The players returned by the model will have more suitable conditions to meet the
 
 Throughout this manual, we will attempt to explain the functioning and logic of the app, highlighting its main features.
 
-
-
 It is worth noting that, for a better visualization of the interface, it is recommended to decrease the zoom level of the web browser to 80-90% on this page. Additionally, while access on mobile devices and tablets is entirely possible, the interaction with the app is significantly enhanced when using a computer.
 
 ### Source Data
@@ -38,6 +36,7 @@ The app is constructed based on aggregated player and team data from the 2022/20
 If necessary, it would be possible to expand the set of included leagues by adding other competitions that the data provider includes.
 
 ### Methodology
+
 The model has a significant strength compared to those typically published in the past, as it takes into account the playing style of the teams it evaluates. The final recommendation for a player in a particular position not only considers variables of similarity between players but also the playing style of the teams in which all analyzed players play. To model this, the proposal of teams is distinguished through the analysis of four categories:
 
 - Tactical Setup: Organization and System
