@@ -29,7 +29,7 @@ It is worth noting that, for a better visualization of the interface, it is reco
 
 ### Source Data
 
-The app is constructed based on aggregated player and team data from the 2022/2023 season, extracted from the specialized portal WyScout. Below is the set of competitions included in the model and visible in the interface.
+The app is set up based on aggregated player and team data from the 2022/2023 season, extracted from the specialized portal WyScout. Below is the set of competitions included in the model and visible in the interface.
 
 ![png](/Documentacion/comps.png)
 
