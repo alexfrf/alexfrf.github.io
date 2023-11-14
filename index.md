@@ -52,6 +52,7 @@ In this piece, we will carry out an analysis based on event data -provided by St
 ## Highlighted Repos
 
 - [AFECFA - Football Analytics Course](https://github.com/alexfrf/curso-afecfa)
+- [Football Analytics with Opta Eventing Data](https://github.com/alexfrf/eventing-modeling)
 - [Econometrics with Python](https://github.com/alexfrf/econometrics-with-python)
 - [Soccermatics Projects](https://github.com/alexfrf/soccermatics)
 - [Machine Learning Projects - University Of Michigan](https://github.com/alexfrf/machine-learning-michigan)
