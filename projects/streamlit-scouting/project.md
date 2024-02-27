@@ -12,7 +12,7 @@
 - **Disclaimer 2: This model, including the app build-up, is entirely written in Python. You can check out the code line by line on the [Github Repo](https://github.com/alexfrf/scouting-profiler)**
 
 The purpose of this project is to develop a model that, when deployed on an app, will segmentate players in the world's most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team's style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed. These footballers will potentially be the best fit for the needs of the team going to the market, as they will require a shorter adaptation process and will know similar game mechanisms, since they come from teams that show tactical similarities.
-![png](/Documentacion/streamlit.png)
+![png](streamlit.png)
 
 #### Data coming from
 
@@ -31,7 +31,7 @@ It is worth noting that, for a better visualization of the interface, it is reco
 
 The app is set up based on aggregated player and team data from the 2022/2023 season, extracted from the specialized portal WyScout. Below is the set of competitions included in the model and visible in the interface.
 
-![png](/Documentacion/comps.png)
+![png](comps.png)
 
 If necessary, it would be possible to expand the set of included leagues by adding other competitions that the data provider includes.
 
@@ -85,11 +85,11 @@ In addition to these two key parameters, there are two fields related to the met
 
 If we check the "Customize Model" option, we will be allowed to set, as desired, a label for each phase of the game in our team. This procedure would be useful for teams that, for example, know they are going to modify their playing style with the arrival of a new coach compared to what is in the data. In that case, they can "design" the conditions of their new playing style by providing parameters in that option.
 
-![png](/Documentacion/psm.png)
+![png](psm.png)
 
 If we select the option "Show players similar to a reference XX," the model, instead of considering the playing style of teams, will exclusively rely on similarities between players. This feature will be useful in cases where a team decides to replace a player by seeking a copy that closely resembles the outgoing player. For instance, if Real Madrid loses Karim Benzema and is determined to replace him with the closest possible match, activating this function would eliminate the "noise" caused by matching based on playing style similarity. It wouldn't return exact copies of players but rather those who best fit considering the team's formation and the other pieces in place under Carlo Ancelotti. As an interesting note, on the left, we display the 15 forwards most suitable for Real Madrid's model (unchecked checkbox), and on the right, what would be returned if we activate this option—the 15 players most similar to Benzema according to the data.
 
-![png](/Documentacion/sims.png)
+![png](sims.png)
 
 We'll leave both options unchecked to make the original model work, which is generally the one that should be used more often. Let's continue reviewing the input variables.
 
@@ -105,19 +105,19 @@ The "Q" parameter determines the number of players the model will return, while 
 
 ### Model Results
 
-![png](/Documentacion/menu.png)
+![png](menu.png)
 
 Once the criteria of operation are specified, the model will primarily return a list of players who, taking into account the set filters, most closely resemble the playing style of the teams. Additionally, it provides key information for the user to interpret the results. Before discussing that table, let's analyze the two tables above.
 
-![png](/Documentacion/selector.png)
+![png](selector.png)
 
 The above table indicates how the model has classified our team for the four analyzed phases of the game. To understand the results, you simply need to click on "Go to Explanation of Game Model Clusters." This will take you to an area where the meaning of each profiling is explained, which teams are in each category, or what some of the key variables are to explain these results. For example, in the case of Racing, we see that, in Defense, the team is labeled in cluster 4. By navigating to the description, we get an explanation that helps contextualize it, and we can see the behavior of the cluster, for certain key metrics, compared to the rest of the groups.
 
-![png](/Documentacion/defense.png)
+![png](defense.png)
 
 Something similar can be found in the case of players. The table on the top right shows the existing roles, according to the model, for the specified position—in this case, for the fullback. These roles essentially describe the player's style of play or the function the player performs when playing in that position. By clicking on the Explanation, we will see the explanation of each role and a set of players that the procedure has identified as belonging to that group.
 
-![png](/Documentacion/lds.png)
+![png](lds.png)
 
 The players table defines, therefore, those players who have the greatest similarity in their game to the selected team's model. This table presents, in addition to the basic player data, three key variables:
 
@@ -135,7 +135,7 @@ Next to the table, we see two visualizations:
 
 - The graph on the right provides an initial image of the role that the model associates as the most representative of the position in the club in question. Here, at a glance, we can see that, in the case of fullbacks, there is no role that clearly dominates, although the long fullback—which is the most offensive profile of all the roles classified—is slightly more favored.
 
-![png](/Documentacion/vars.png)
+![png](vars.png)
 
 Once we have obtained the results from the model and have an idea of the type of player being offered, we can proceed to analyze the profiles and players that the model has returned to us.
 
@@ -143,7 +143,7 @@ Once we have obtained the results from the model and have an idea of the type of
 
 In this section of the interface, the most analytically profound visualizations are provided, allowing us to discern the characteristics and level of any recommended player and, additionally, make comparisons and/or seek alternatives. First, we observe a radar chart accompanied by a percentiles indicator. These two visualizations provide a detailed and exhaustive image of the strengths of the player, measuring those variables that are key to the position.
 
-![png](/Documentacion/radar.png)
+![png](radar.png)
 
 In the radar chart, the player—in this case, Kvicha Kvaratskhelia, in violet—is compared with the average left midfielder of Serie A. Additionally, a "mold," colored in light gray, is shown, displaying the maximum values that left midfielders in Italian football achieved during the season. On the right, the percentile chart contextualizes the player by measuring them against the rest of the players in the main position across any league, indicating, for each metric, their proximity to the best possible score. Holding a 97th percentile in completed dribbles, as in the example here, implies that the player surpasses 97% of players in the model in that statistic. In this chart, for example, the Georgian player is being compared not only against left midfielders but also against attacking midfielders and right wingers. Below, as we see, a score is established, out of 99, for the player based on the level shown in the evaluated variables. Green-colored metrics are considered defensive, orange ones are related to construction, and purple ones are offensive.
 
@@ -151,17 +151,17 @@ The second part of this section allows for the comparison of the player that we 
 
 The tool allows us, within the same radar, to check the metrics of the analyzed player—keeping Kvaratskhelia—and measure them against the player currently playing the same position in the team, namely Jack Grealish. We can perform the same comparison using the tornado chart just below, which compares the percentiles recorded by both players. As above, the score that each player obtains in each game category is presented.
 
-![png](/Documentacion/radar_comp.png)
+![png](radar_comp.png)
 
 In addition to the above, the user can measure the degree of similarity of the player being analyzed with the set of players already in the squad for the same position. Additionally, the model returns, on the right side of the zone, the players who most resemble both the player on the left of the radar and their comparison.
 
-![png](/Documentacion/simi.png)
+![png](simi.png)
 
 ### Context
 
 The last point in the analytical zone allows the user to measure the player in question and compare them with the rest of the players in that position in an interactive and customized way. After selecting the two variables that are considered most appropriate for the comparison, a scatter plot will be displayed where elements will be positioned, and they will be differentiated by their role through the color of their label. At a glance, we can already discern that the role of "Self-Sufficient Winger" shows better numbers in the two default selected metrics—Key Passes and Completed Tackles in Deep Areas.
 
-![png](/Documentacion/context.png)
+![png](context.png)
 
 In the above image, we see the results obtained by defining two new variables—xG+xA (to measure the level of chances they create) and Completed Dribbles—seeing how offensive midfielders selected by the model for Manchester City behave under those measures.
 
