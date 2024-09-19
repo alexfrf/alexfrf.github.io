@@ -2,14 +2,12 @@
 
 ![png](streamlit.jpg)
 
-- [GO TO THE STREAMLIT APP -v2.0-](https://scouting-profiler.streamlit.app/)
+- [GO TO THE STREAMLIT APP -v2.0-](https://scouting-profiler-en.streamlit.app/)
 - [GO TO GITHUB REPO -version 1.0-](https://github.com/alexfrf/scouting-profiler)
-- [GO TO THE VIDEO PRESENTATION ON YOUTUBE -version 1.0-](https://www.youtube.com/watch?v=UlVIGp-x7VM&t=1700s)
+- [GO TO THE VIDEO PRESENTATION ON YOUTUBE (in Spanish) -version 1.0-](https://www.youtube.com/watch?v=UlVIGp-x7VM&t=1700s)
 
 
-- **Disclaimer 1: Both data and the app itself are written in Spanish**
-
-- **Disclaimer 2: This model, including the app build-up, is entirely written in Python. You can check out the code line by line on the [Github Repo](https://github.com/alexfrf/scouting-profiler)**
+- **Disclaimer: This model, including the app build-up, is entirely written in Python. You can check out the code line by line on the [Github Repo](https://github.com/alexfrf/scouting-profiler)**
 
 The purpose of this project is to develop a model that, when deployed on an app, will segmentate players in the world's most important football competitions according to advanced metrics. By taking into account the game model of teams, the model will link each club to the type of player who, given their position on the field, best fits into their game model. The value of the model lies in adding the team's style of play - both their own and that of their opponents - as a key factor, measuring and quantifying it to identify those players who are closest, based on advanced metrics, to the numbers of the team being analyzed. These footballers will potentially be the best fit for the needs of the team going to the market, as they will require a shorter adaptation process and will know similar game mechanisms, since they come from teams that show tactical similarities.
 ![png](streamlit.png)
