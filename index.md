@@ -40,15 +40,6 @@ We will carry out the task of looking for a profile that could fit into the role
 
 ---
 
-[**Pierre-Emile Højbjerg at Euro 2020 – Performance Analysis based on Data**](/projects/hojbjerg-soccermatics/project.md)
-
-<img src="images/ph.jpg?raw=true"/>
-
-In this piece, we will carry out an analysis based on event data -provided by Statsbomb- regarding the performance given by the Spurs midfielder Pierre-Emile Højbjerg during the tournament.
-[**Read More**](/projects/hojbjerg-soccermatics/project.md)
-
----
-
 ## Highlighted Repos
 
 - [AFECFA - Football Analytics Course](https://github.com/alexfrf/curso-afecfa)
